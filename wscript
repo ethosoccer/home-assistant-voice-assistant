@@ -42,6 +42,7 @@ def build(ctx):
         for platform in ctx.env.TARGET_PLATFORMS:
             ctx.build_platform(platform, binaries=binaries)
 
+        ctx.env.BUNDLE_NAME = 'home-assistant-voice-assistant.pbw'
         ctx.pbl_bundle(binaries=binaries,
                        js=js_target)
     else:
@@ -49,6 +50,7 @@ def build(ctx):
         ctx.build_platform(binaries=binaries)
 
         elfs = binaries[0]
+        ctx.env.BUNDLE_NAME = 'home-assistant-voice-assistant.pbw'
         ctx.pbl_bundle(elf=elfs['app_elf'],
                        worker_elf=elfs['worker_elf'] if 'worker_elf' in elfs else None,
                        js=js_target)

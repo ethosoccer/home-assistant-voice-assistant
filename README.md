@@ -50,7 +50,7 @@ pebble build
 The installable package is created at:
 
 ```text
-build/pebble-home-assistant-on-your-wrist.pbw
+build/home-assistant-voice-assistant.pbw
 ```
 
 Install it through the developer connection or your preferred Pebble
