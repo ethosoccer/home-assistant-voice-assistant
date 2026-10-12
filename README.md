@@ -1,160 +1,70 @@
-# Pebble Home Assistant on your Wrist
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+# Home Assistant Voice for Pebble
 
-Control your Home Assistant smart home directly from your Pebble smartwatch! This app uses WebSockets for real-time updates and control of your Home Assistant devices and entities.
+A single-purpose Pebble app that launches directly into Home Assistant Assist.
 
+This project is a streamlined fork of
+[`caco3/pebble-home-assistant-on-your-wrist`](https://github.com/caco3/pebble-home-assistant-on-your-wrist).
+It retains the original WebSocket authentication, Assist pipeline support,
+dictation UI, and response display while removing entity browsing, favorites,
+areas, labels, and other menu features.
 
-![config/logo_large.png](config/logo_large.png)
+## Fast launch behavior
 
-## Features
+On launch the app:
 
-- **Voice Assistant** — Control your smart home using natural voice commands with support for multiple conversation agents (Assist, ChatGPT, and more)
-- **Browse by Floor & Area** — Easily find entities organized by their assigned floors and areas
-- **Browse by Label** — Filter and view entities by their Home Assistant labels
-- **Favorites** — Mark frequently used entities for quick access
-- **Pin to Main Menu** — Pin your most important entities directly to the main menu
-- **Live Updates** — Entity states update instantly in real-time via WebSocket connection
-- **Auto-Close After Action** — Optionally close the app automatically after an entity action (e.g. toggle) is triggered successfully
+1. connects and authenticates to Home Assistant;
+2. reuses the saved Assist pipeline when available;
+3. opens the Assistant screen immediately;
+4. starts Pebble dictation automatically; and
+5. refreshes the pipeline list in the background.
 
-### Improvements against [Home Assistant WS](https://github.com/skylord123/pebble-home-assistant-ws)
-- **Easy Favorites Pinning** - Edit the favorites directly on the smart phone
-- **Favorites Colors** - Assign colors to your favorites for easier handling
-- **Security** - The Home Assistant Token is only stored on the watch (not sent to the remote configuration page for security hardening)
-- **Backup and Restore** - Settings import/export for easy backup and restore
-- **UI enhancements**
+On first launch, or when no pipeline has been saved, the app performs one
+pipeline discovery request before opening Assistant. It does **not** download
+Home Assistant entity states or registries.
 
-## Screenshots
-### Pebble Watch
-![Favorites](resources/screenshot-favorites.png)
-![All Entities](resources/screenshot-all%20entities.jpg)
-![Automations](resources/screenshot-automations.jpg)
+Press Select to dictate another command. Long-press Select to cycle through
+available Assist pipelines.
 
-### Smartphone (Configuration)
-[![Configuration](resources/screenshot-config_resized.jpg)](resources/screenshot-config.jpg)
-[![Entity Selection Filter](resources/screenshot-config-filter_resized.jpg)](resources/screenshot-config-filter.jpg)
-[![Favorites](resources/screenshot-config-favorites_resized.jpg)](resources/screenshot-config-favorites.jpg)
+## Requirements
 
-
-Support
--------
-
-If Home Assistant on your Wrist has been useful to you, consider supporting its development.
-All of my projects are fully open-source and free — donations help cover time, tools, and ongoing maintenance.
-
-The donations go to [skylord123](https://github.com/skylord123) who did the main work.
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/B0B51BM7C)
-[![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/donate/?hosted_button_id=4VS2UQWDUALXA)
-
-
-## Installation
-
-#### Rebble App Store
-You can find our app in the app store under [Home Assistant on your Wrist](https://apps.rebble.io/en_US/application/68dea5734be9cb0009429595)
-
-#### Sideload
-
-This is useful if you want to install a version not yet available on the app store for example.
-
-1. **Download the app**:
-   - Click the [Releases](https://github.com/caco3/pebble-home-assistant-on-your-wrist/releases) tab on the GitHub repository page
-   - Press the `pebble.pbw` link under the release you want to start the download
-   - The downloaded .pbw file is ready to be installed on your Pebble watch
-
-2. **Install on your Pebble**:
-   - **Android:** Use [rebble-sideloader](https://github.com/pebble-dev/rebble-sideloader) to side load the pbw file to your watch
-
-If you need any assistance, feel free to join our [Discord Discussion](#join-the-discussion)
+- A microphone-enabled Pebble supported by the `emery` platform
+- Home Assistant reachable from the paired phone
+- A Home Assistant long-lived access token
+- The Home Assistant Conversation integration and at least one Assist pipeline
 
 ## Configuration
 
-After installation, you'll need to configure the app to connect to your Home Assistant instance:
+Open the app settings in the Pebble mobile app and enter your Home Assistant
+URL and long-lived access token. Voice confirmation, font size, and pipeline
+selection from the upstream configuration page remain supported.
 
-1. **Open the settings** for the app in the Pebble smartphone app
-2. **Enter your Home Assistant details**:
-   - **URL**: Your Home Assistant URL (e.g., `https://yourhomeassistant.duckdns.org`)
-   - **Access Token**: A [Long-Lived Access Token](https://www.home-assistant.io/docs/authentication/) from Home Assistant
-   - **Voice Confirmation**: Enable/disable voice command confirmation
-   - **Enable Voice**: Turn on/off voice assistant functionality
+The access token stays in Pebble settings and is not sent to the hosted
+configuration page.
 
-### Home Assistant Setup Requirements
-
-- Enable the [Conversation integration](https://www.home-assistant.io/integrations/conversation/) for voice control
-- Optional: Configure additional conversation agents (like ChatGPT) for enhanced voice control
-
-## Using the App
-
-### Main Menu
-
-- **Voice Assistant**: Access voice controls (if enabled)
-- **Favorites**: View and control favorite entities
-- **Areas**: Browse entities organized by room/area
-- **All Entities**: Browse all available entities by type
-
-### Voice Control
-
-1. Select "Voice Assistant" from the main menu
-2. Press the middle button to start dictation
-3. Speak your command (e.g., "Turn on the kitchen lights" or "What's the temperature outside?")
-4. View the response and scroll if needed using up/down buttons
-5. Long-press the middle button to change conversation agents
-
-### Entity Control
-
-- **Short press** on an entity to view its details and controls
-- **Long press** on compatible entities (lights, switches, etc.) to toggle them directly
-- For media players, use the dedicated control screen with volume and playback controls
-- Add frequently used entities to favorites for quicker access
-
-## Troubleshooting
-
-- **Connection Issues**: Verify your Home Assistant URL and token are correct
-- **Entity Not Responding**: Check that the entity is available in Home Assistant
-- **Voice Commands Not Working**: Ensure the conversation integration is enabled in Home Assistant
-- **App Crashes**: Try restarting your Pebble watch
-- **Entity Changes Not Updating**: Adjust the refresh interval in settings
-
-## Development
-
-This app is built using Pebble.js and is open source. Contributions are welcome!
-
-- **GitHub Repository**: [github.com/caco3/pebble-home-assistant-on-your-wrist](https://github.com/caco3/pebble-home-assistant-on-your-wrist)
-- **Bug Reports**: Please use the GitHub issues page to report bugs
-- **Feature Requests**: Feel free to suggest new features through GitHub issues
-
-### Building From Source
-
-This requires the pebble sdk. Go into the Pebble app on your phone and enable the Developer Connection. Use the "Server IP" in the sample below to install the app over the network to your watch.
+## Build
 
 ```bash
-# Clone the repository
-git clone https://github.com/caco3/pebble-home-assistant-on-your-wrist.git
-cd pebble-ha-on-your-wrist
-
-# Install dependencies
-npm install
-
-# Build the app
 pebble build
-
-# Install on your Pebble (when connected)
-pebble install --logs --phone 192.168.1.100
 ```
 
-## Motivation
+The installable package is created at:
 
-I recently dusted off my Pebble watch and wanted to start using it again. Controlling Home Assistant was at the top of my list of wants for a smartwatch.
+```text
+build/pebble-home-assistant-on-your-wrist.pbw
+```
 
-While other Home Assistant applications existed, none of them offered complete device control at the time this project started. The existing voice assistant (Snowy) didn't work with Home Assistant, and the Home Assistant conversation API was only accessible via WebSockets.
+Install it through the developer connection or your preferred Pebble
+sideloader.
 
-Converting the entire application to use WebSockets not only enabled voice control but also provided the benefits of live event updates and access to additional endpoints not available through the REST API.
+## Project identity
 
-## Acknowledgements
+This fork uses its own app UUID and the display name **HA Voice**, so it can be
+installed alongside the original Home Assistant app.
 
-- Thanks to the Home Assistant team for their excellent API documentation
-- Special thanks to the Pebble developer community for keeping the platform alive
-- Thanks to all contributors who have helped improve this application
-- Thanks to [skylord123](https://github.com/skylord123) for the original work
+## License and attribution
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT licensed. This derivative retains the original license and copyright
+notices for Skylar S and George Ruinelli. See [`license.txt`](license.txt).

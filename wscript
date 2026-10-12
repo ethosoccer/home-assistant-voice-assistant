@@ -1,3 +1,6 @@
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
 import json
 import os
 import re
@@ -67,7 +70,7 @@ def configure_platform(ctx, platform=None):
                    '-Wno-type-limits',
                    '-Wno-missing-field-initializers',
                    '-DSPLASH_LOGO',
-                   '-DSPLASH_TEXT_TITLE="Home Assistant on your Wrist"',
+                   '-DSPLASH_TEXT_TITLE="HA Voice"',
                    '-DSPLASH_TEXT_SUBTITLE=""'])
 
     ctx.env.CFLAGS = cflags
@@ -125,7 +128,7 @@ def concat_javascript(ctx, js_path=None):
                 """ % (relpath))
             body = coffeescript.compile(body)
             # change ".coffee" or ".js.coffee" extensions to ".js"
-            relpath = re.sub('(\.js)?\.coffee$', '.js', relpath)
+            relpath = re.sub(r'(\.js)?\.coffee$', '.js', relpath)
             return relpath, body
 
         sources = []

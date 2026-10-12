@@ -1,3 +1,6 @@
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
 /**
  * ConnectionService - Handles Home Assistant WebSocket connection lifecycle
  */
@@ -76,14 +79,6 @@ var ConnectionService = {
         }
 
         // Reset state variables in AppState
-        appState.ha_state_cache = null;
-        appState.ha_state_dict = null;
-        appState.ha_state_cache_updated = null;
-        appState.area_registry_cache = null;
-        appState.floor_registry_cache = null;
-        appState.device_registry_cache = null;
-        appState.entity_registry_cache = null;
-        appState.label_registry_cache = null;
         appState.ha_pipelines = null;
         appState.preferred_pipeline = null;
         appState.selected_pipeline = null;
@@ -161,20 +156,6 @@ var ConnectionService = {
                 self.onAuthOk(evt);
             }
         });
-
-        // Wrap callService so the app can automatically close itself after an
-        // entity action has been triggered successfully (configurable).
-        // The HAWS callback signature is:
-        //   callService(domain, service, service_data, target, successCallback, errorCallback)
-        var hawsCallService = appState.haws.callService.bind(appState.haws);
-        appState.haws.callService = function(domain, service, serviceData, target, successCallback, errorCallback) {
-            hawsCallService(domain, service, serviceData, target, function(result) {
-                if (typeof successCallback === 'function') {
-                    successCallback(result);
-                }
-                helpers.maybeCloseAppAfterEntityAction();
-            }, errorCallback);
-        };
 
         appState.haws.connect();
     },

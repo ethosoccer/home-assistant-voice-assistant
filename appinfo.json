@@ -1,10 +1,13 @@
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
 {
   "appKeys": {},
   "capabilities": [
     "configurable"
   ],
-  "companyName": "CaCO3",
-  "longName": "Home Assistant on your Wrist",
+  "companyName": "ethosoccer",
+  "longName": "Home Assistant Voice",
   "resources": {
     "media": [
       {
@@ -19,195 +22,20 @@
         "type": "bitmap"
       },
       {
-        "file": "images/tile_splash.png",
-        "name": "IMAGE_TILE_SPLASH",
-        "type": "bitmap"
-      },
-      {
         "file": "fonts/UbuntuMono-Regular.ttf",
         "name": "MONO_FONT_14",
         "type": "font"
-      },
-      {
-        "file": "images/icon_bulb.png",
-        "name": "IMAGE_ICON_BULB",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_bulb_on.png",
-        "name": "IMAGE_ICON_BULB_ON",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_sensor.png",
-        "name": "IMAGE_ICON_SENSOR",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_switch_on.png",
-        "name": "IMAGE_ICON_SWITCH_ON",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_switch_off.png",
-        "name": "IMAGE_ICON_SWITCH_OFF",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_temp.png",
-        "name": "IMAGE_ICON_TEMP",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_door_open.png",
-        "name": "IMAGE_ICON_DOOR_OPEN",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_door_closed.png",
-        "name": "IMAGE_ICON_DOOR_CLOSED",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_auto_on.png",
-        "name": "IMAGE_ICON_AUTO_ON",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_auto_off.png",
-        "name": "IMAGE_ICON_AUTO_OFF",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_blinds_open.png",
-        "name": "IMAGE_ICON_BLIND_OPEN",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_blinds_closed.png",
-        "name": "IMAGE_ICON_BLIND_CLOSED",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_unavailable.png",
-        "name": "IMAGE_ICON_UNAVAILABLE",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/micro_tick_active.png",
-        "name": "IMAGE_MICRO_TICK_ACTIVE",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/micro_tick.png",
-        "name": "IMAGE_MICRO_TICK",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/micro_brightness.png",
-        "name": "IMAGE_MICRO_BRIGHTNESS",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/micro_temp.png",
-        "name": "IMAGE_MICRO_TEMP",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/micro_tick_chalk.png",
-        "name": "IMAGE_MICRO_TICK_CHALK",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_media.png",
-        "name": "IMAGE_ICON_MEDIA",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_play.png",
-        "name": "IMAGE_ICON_PLAY",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_playpause.png",
-        "name": "IMAGE_ICON_PLAYPAUSE",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_volume_down.png",
-        "name": "IMAGE_ICON_VOLUME_DOWN",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_volume_up.png",
-        "name": "IMAGE_ICON_VOLUME_UP",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_unknown.png",
-        "name": "IMAGE_ICON_UNKNOWN",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_unmuted.png",
-        "name": "IMAGE_ICON_UNMUTED",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_muted.png",
-        "name": "IMAGE_ICON_MUTED",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_locked.png",
-        "name": "IMAGE_ICON_LOCKED",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_unlocked.png",
-        "name": "IMAGE_ICON_UNLOCKED",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_vacuum.png",
-        "name": "IMAGE_ICON_VACUUM",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_scene.png",
-        "name": "IMAGE_ICON_SCENE",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_script.png",
-        "name": "IMAGE_ICON_SCRIPT",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/icon_arrow_left.png",
-        "name": "IMAGE_ICON_ARROW_LEFT",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/appicon_blue.png",
-        "name": "IMAGE_APPICON_BLUE",
-        "type": "bitmap"
-      },
-      {
-        "file": "images/logo_large.png",
-        "name": "IMAGE_HA_LOGO",
-        "type": "bitmap"
       }
     ]
   },
   "sdkVersion": "3",
-  "shortName": "HA on Wrist",
+  "shortName": "HA Voice",
   "targetPlatforms": [
     "emery"
   ],
-  "uuid": "20c52dca-957d-4a85-ad2f-5ad00f0b438b",
-  "versionCode": 2,
-  "versionLabel": "1.3",
+  "uuid": "63c7f693-7fde-4c18-b0d7-7a23a3dd68c0",
+  "versionCode": 1,
+  "versionLabel": "1.0.0",
   "watchapp": {
     "hiddenApp": false,
     "watchface": false

@@ -1,3 +1,6 @@
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
 /**
  * AssistPage - Voice Assistant interface
  *
@@ -15,7 +18,6 @@ var Voice = require('ui/voice');
 var Light = require('ui/light');
 var Settings = require('settings');
 
-var BasePage = require('app/pages/BasePage');
 var AppState = require('app/AppState');
 var Constants = require('app/Constants');
 var helpers = require('app/helpers');
@@ -84,9 +86,9 @@ function loadAssistPipelines(callback) {
     );
 }
 
-class AssistPage extends BasePage {
+class AssistPage {
     constructor() {
-        super();
+        this.appState = AppState.getInstance();
         this.assistWindow = null;
         this.conversationElements = [];
         this.currentY = 24;
@@ -143,7 +145,7 @@ class AssistPage extends BasePage {
         this.errorMessageHeight = 0;
 
         // Add a title bar
-        var titleBar = new UI.Text({
+        this.titleBar = new UI.Text({
             position: new Vector(0, 0),
             size: new Vector(Feature.resolution().x, 24),
             text: 'Assistant',
@@ -152,7 +154,7 @@ class AssistPage extends BasePage {
             textAlign: 'center',
             backgroundColor: Constants.colour.highlight
         });
-        this.assistWindow.add(titleBar);
+        this.assistWindow.add(this.titleBar);
 
         // Loading animation dots
         this.loadingDots = [];
@@ -185,9 +187,7 @@ class AssistPage extends BasePage {
         });
 
         this.assistWindow.on('longClick', 'select', function() {
-            // Import inline to avoid circular dependency
-            var SettingsMenuPage = require('app/pages/SettingsMenuPage');
-            SettingsMenuPage.showVoicePipelineMenu();
+            self.selectNextPipeline();
         });
 
         this.assistWindow.on('show', function() {
@@ -199,6 +199,32 @@ class AssistPage extends BasePage {
         });
 
         this.assistWindow.show();
+    }
+
+    /** Cycle through available pipelines without opening a settings menu. */
+    selectNextPipeline() {
+        var pipelines = this.appState.ha_pipelines || [];
+        if (pipelines.length < 2) {
+            return;
+        }
+
+        var currentIndex = -1;
+        for (var i = 0; i < pipelines.length; i++) {
+            if (pipelines[i].id === this.appState.selected_pipeline) {
+                currentIndex = i;
+                break;
+            }
+        }
+
+        var selected = pipelines[(currentIndex + 1) % pipelines.length];
+        this.appState.selected_pipeline = selected.id;
+        Settings.option('selected_pipeline', selected.id);
+        this.titleBar.text(selected.name || 'Assistant');
+
+        var titleBar = this.titleBar;
+        setTimeout(function() {
+            titleBar.text('Assistant');
+        }, 1500);
     }
 
     /**
