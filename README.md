@@ -1,6 +1,3 @@
-Failed to create stream fd: Operation not permitted
-Failed to create stream fd: Operation not permitted
-Failed to create stream fd: Operation not permitted
 # Home Assistant Voice for Pebble
 
 A single-purpose Pebble app that launches directly into Home Assistant Assist.

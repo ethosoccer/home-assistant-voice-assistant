@@ -1,6 +1,3 @@
-Failed to create stream fd: Operation not permitted
-Failed to create stream fd: Operation not permitted
-Failed to create stream fd: Operation not permitted
 /** Settings required by the voice-only Home Assistant client. */
 var Settings = require('settings');
 var Feature = require('platform/feature');
