@@ -1,4 +1,4 @@
-# Home Assistant Voice for Pebble
+# Home Assistant - Voice Assistant
 
 A single-purpose Pebble app that launches directly into Home Assistant Assist.
 
@@ -58,8 +58,10 @@ sideloader.
 
 ## Project identity
 
-This fork uses its own app UUID and the display name **HA Voice**, so it can be
-installed alongside the original Home Assistant app.
+This fork uses its own app UUID and the display name
+**Home Assistant - Voice Assistant**. Its shorter Pebble launcher name is
+**HA Assistant**, and it can be installed alongside the original Home
+Assistant app.
 
 ## License and attribution
 

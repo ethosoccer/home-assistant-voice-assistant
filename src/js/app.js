@@ -1,5 +1,5 @@
 /**
- * HA Voice Launcher
+ * Home Assistant - Voice Assistant
  *
  * A deliberately small Home Assistant client that authenticates over the
  * WebSocket API and opens Assist immediately. Entity and registry data are
@@ -29,7 +29,7 @@ var loadingCard = new UI.Window({
 });
 
 var splashTitle = new UI.Text({
-    text: 'HA Voice',
+    text: 'HA Assistant',
     position: new UI.Vector2(0, 18),
     size: new UI.Vector2(resolution.x, 40),
     color: 'blue',
@@ -79,7 +79,7 @@ function showAssistant() {
     }
 
     if (!appState.voice_enabled) {
-        loadingCard.title('HA Voice');
+        loadingCard.title('HA Assistant');
         loadingCard.subtitle('Voice unavailable');
         loadingCard.body('A microphone-enabled Pebble is required.');
         return;
@@ -145,7 +145,7 @@ ConnectionService.init({
     onAuthOk: onAuthOk
 });
 
-helpers.log_message('Started HA Voice v' + Constants.appVersion);
+helpers.log_message('Started HA Assistant v' + Constants.appVersion);
 SettingsManager.load();
 loadingCard.show();
 ConnectionService.connect();

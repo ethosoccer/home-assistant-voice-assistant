@@ -5,9 +5,9 @@ function log_message(message, extra) {
     }
 
     if (extra !== undefined) {
-        console.log('[HA Voice] ' + message, extra);
+        console.log('[HA Assistant] ' + message, extra);
     } else {
-        console.log('[HA Voice] ' + message);
+        console.log('[HA Assistant] ' + message);
     }
 }
 
