@@ -63,6 +63,11 @@ jobs:
             else
               echo "⚠ No docs/ directory found in master branch"
             fi
+
+            mkdir -p deploy/assets/store
+            cp master-branch/resources/banner.png deploy/assets/banner.png
+            cp master-branch/resources/store/*.png deploy/assets/store/
+            echo "✓ Copied current banner, thumbnail, and screenshots"
           else
             echo "ℹ Skipping docs/ deployment (not on master branch)"
           fi
@@ -92,4 +97,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

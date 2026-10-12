@@ -1,5 +1,7 @@
 # Home Assistant - Voice Assistant
 
+![Home Assistant Voice Assistant banner](resources/banner.png)
+
 A single-purpose Pebble app that launches directly into Home Assistant Assist.
 
 This project is a streamlined fork of
@@ -24,6 +26,12 @@ Home Assistant entity states or registries.
 
 Press Select to dictate another command. Long-press Select to cycle through
 available Assist pipelines.
+
+## Screenshots
+
+| Connecting | Listening | Response |
+| --- | --- | --- |
+| ![Connecting to Home Assistant](resources/store/screenshot-launch.png) | ![Listening for a voice command](resources/store/screenshot-listening.png) | ![Displaying an Assist response](resources/store/screenshot-response.png) |
 
 ## Requirements
 

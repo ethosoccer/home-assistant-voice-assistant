@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Home Assistant on your Wrist - Config v1.2</title>
+	<meta charset="UTF-8">
+	<title>Home Assistant - Voice Assistant Settings</title>
 	<script src="https://use.fontawesome.com/3a291b24ff.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="color-scheme" content="light dark">
@@ -87,6 +88,10 @@
 		}
 
 		/* Header */
+		.voice-only-hidden {
+			display: none !important;
+		}
+
 		.page-header {
 			padding-bottom: 0;
 			padding-top: 0;
@@ -802,7 +807,7 @@
 		<!-- Header -->
 		<div class="page-header">
 			<img src="logo_large.png" alt="Home Assistant" style="width: 100%; height: auto; margin: 0 auto 0.25rem; display: block;">
-			<p class="author-link">Developed by CaCO3, based on <b>Home Assistant WS</b> by Skylor Sadlier</p>
+			<p class="author-link">Developed by <b>ethosoccer</b>. Based on work by CaCO3 and Skylor Sadlier.</p>
 		</div>
 
 		<div id="alert-container"></div>
@@ -887,7 +892,7 @@
 		</div>
 
 		<!-- Quick Launch Settings -->
-		<div class="section">
+		<div class="section voice-only-hidden">
 			<div class="section-header collapsible collapsed">⚡ Quick Launch Settings</div>
 			<div class="section-body collapsed">
 				<div class="component">
@@ -926,7 +931,7 @@
 		</div>
 
 		<!-- Main Menu Order -->
-		<div class="section">
+		<div class="section voice-only-hidden">
 			<div class="section-header collapsible collapsed">📋 Main Menu Order</div>
 			<div class="section-body collapsed">
 				<div class="component">
@@ -948,7 +953,7 @@
 		</div>
 
 		<!-- Pinned Entities -->
-		<div class="section" id="pinned-container" style="display:none;">
+		<div class="section voice-only-hidden" id="pinned-container" style="display:none;">
 			<div class="section-header collapsible">📌 Pinned Entities</div>
 			<div class="section-body">
 				<div class="component">
@@ -963,7 +968,7 @@
 		</div>
 
 		<!-- Entity Picker -->
-		<div class="section" id="entity-picker-container" style="display:none;">
+		<div class="section voice-only-hidden" id="entity-picker-container" style="display:none;">
 			<div class="section-header collapsible collapsed">➕ Add Entities to Favorites/Main Menu</div>
 			<div class="section-body collapsed">
 				<div class="component">
@@ -983,7 +988,7 @@
 		</div>
 
 		<!-- Entity Settings -->
-		<div class="section">
+		<div class="section voice-only-hidden">
 			<div class="section-header collapsible collapsed">⚙️ Entity Settings</div>
 			<div class="section-body collapsed">
 				<div class="component">
@@ -1064,7 +1069,7 @@
 		</div>
 
 		<!-- Entity Domain Grouping -->
-		<div class="section">
+		<div class="section voice-only-hidden">
 			<div class="section-header collapsible collapsed">🗂️ Entity Domain Grouping</div>
 			<div class="section-body collapsed">
 				<div class="component">
@@ -1121,7 +1126,7 @@
 		</div>
 
 		<!-- Favorite Entities -->
-		<div class="section" id="favorites-container" style="display:none;">
+		<div class="section voice-only-hidden" id="favorites-container" style="display:none;">
 			<div class="section-header collapsible collapsed">⭐ Favorite Entities</div>
 			<div class="section-body collapsed">
 				<div class="component">
@@ -1136,7 +1141,7 @@
 		</div>
 
 		<!-- Domain Filters -->
-		<div class="section">
+		<div class="section voice-only-hidden">
 			<div class="section-header collapsible collapsed">🚫 Domain Filters</div>
 			<div class="section-body collapsed">
 				<div class="component">
@@ -1159,7 +1164,7 @@
 		</div>
 
 		<!-- Timeline Section -->
-		<div class="section" id="timeline-section" style="display:none;">
+		<div class="section voice-only-hidden" id="timeline-section" style="display:none;">
 			<div class="section-header collapsible collapsed">🕐 Timeline</div>
 			<div class="section-body collapsed">
 				<div class="component">
@@ -1178,7 +1183,7 @@
 		</div>
 
 		<!-- Export / Import Settings -->
-		<div class="section">
+		<div class="section voice-only-hidden">
 			<div class="section-header collapsible collapsed">💾 Settings Import/Export</div>
 			<div class="section-body collapsed">
 				<div class="component">
@@ -1220,13 +1225,13 @@
 			<div class="section-body collapsed">
 				<div class="component">
 					<p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0 0 0.5rem 0;">
-						<b>Home Assistant on your Wrist</b> brings your Home Assistant entities to your Pebble watch.
+						<b>Home Assistant - Voice Assistant</b> opens Home Assistant Assist directly from your Pebble watch.
 					</p>
 					<p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0 0 0.5rem 0;">
-						Use the sections above to configure your connection, voice assistant, quick launch, favorites, domains and more.
+						Configure your Home Assistant connection, Assist pipeline, confirmation behavior, and response font size above.
 					</p>
 					<p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0;">
-						Developed by CaCO3, based on Home Assistant WS by Skylor Sadlier.
+						Developed by ethosoccer. Based on work by CaCO3 and Skylor Sadlier.
 					</p>
 				</div>
 			</div>

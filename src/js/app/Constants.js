@@ -1,10 +1,8 @@
 var Feature = require('platform/feature');
 
 module.exports = {
-    appVersion: '1.0.0',
-    // Reuse the upstream page for URL/token and voice settings. Extra options
-    // returned by that page are ignored by the voice-only runtime.
-    configPageUrl: 'https://caco3.github.io/pebble-home-assistant-on-your-wrist/config/v1.2.html',
+    appVersion: '1.0.1',
+    configPageUrl: 'https://ethosoccer.github.io/home-assistant-voice-assistant/config/v1.2.html',
     debugMode: false,
     debugHAWS: false,
     coalesce_messages_enabled: true,

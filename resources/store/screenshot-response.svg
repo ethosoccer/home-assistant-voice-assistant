@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="228" viewBox="0 0 200 228">
+  <rect width="200" height="228" fill="#ffffff"/>
+  <rect width="200" height="30" fill="#00aaff"/>
+  <text x="100" y="22" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#000000">Assistant</text>
+  <text x="10" y="58" font-family="sans-serif" font-size="18" font-weight="700" fill="#0066cc">You</text>
+  <text x="10" y="80" font-family="sans-serif" font-size="16" fill="#111111">Turn off the</text>
+  <text x="10" y="100" font-family="sans-serif" font-size="16" fill="#111111">living room lights</text>
+  <text x="10" y="134" font-family="sans-serif" font-size="18" font-weight="700" fill="#0066cc">Assistant</text>
+  <text x="10" y="158" font-family="sans-serif" font-size="16" fill="#111111">Done. The lights</text>
+  <text x="10" y="178" font-family="sans-serif" font-size="16" fill="#111111">are now off.</text>
+  <text x="100" y="216" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555555">Press Select to speak again</text>
+</svg>

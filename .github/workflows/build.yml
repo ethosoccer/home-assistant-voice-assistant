@@ -29,8 +29,8 @@ jobs:
       - name: Build with Docker
         run: make docker-build
 
-      - name: Rename app
-        run: cp build/pebble.pbw pebble-home-assistant-on-your-wrist-g${{ env.COMMIT_SHORT_SHA }}.pbw
+      - name: Copy versioned app
+        run: cp build/home-assistant-voice-assistant.pbw home-assistant-voice-assistant-g${{ env.COMMIT_SHORT_SHA }}.pbw
 
       - name: Generate ELF bundle
         run: |
@@ -45,8 +45,8 @@ jobs:
       - name: Upload PBW
         uses: actions/upload-artifact@v4
         with:
-          name: pebble-home-assistant-on-your-wrist PBW
-          path: pebble-home-assistant-on-your-wrist-g${{ env.COMMIT_SHORT_SHA }}.pbw
+          name: home-assistant-voice-assistant PBW
+          path: home-assistant-voice-assistant-g${{ env.COMMIT_SHORT_SHA }}.pbw
           if-no-files-found: error
 
       - name: Upload ELFs

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="228" viewBox="0 0 200 228">
+  <rect width="200" height="228" fill="#ffffff"/>
+  <text x="100" y="34" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#0066cc">HA Assistant</text>
+  <path d="M60 84L100 48l40 36v45H60z" fill="#18b9e8"/>
+  <path d="M100 68v57M100 102L78 86M100 110l24-20" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="100" cy="68" r="7" fill="#ffffff"/><circle cx="78" cy="86" r="7" fill="#ffffff"/><circle cx="124" cy="90" r="7" fill="#ffffff"/>
+  <text x="100" y="168" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#0066cc">Connecting</text>
+  <circle cx="76" cy="196" r="5" fill="#00aaff"/>
+  <circle cx="100" cy="196" r="5" fill="#0077dd"/>
+  <circle cx="124" cy="196" r="5" fill="#004499"/>
+</svg>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pebble Home Assistant WS</title>
+    <title>Home Assistant - Voice Assistant for Pebble</title>
     <style>
         :root {
             --primary-color: #03a9f4;
@@ -22,7 +22,7 @@
         }
         .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
         header { text-align: center; margin-bottom: 3rem; }
-        .logo { width: 120px; height: 120px; border-radius: 24px; margin-bottom: 1rem; }
+        .banner { width: 100%; max-width: 720px; height: auto; border-radius: 16px; margin-bottom: 1.5rem; }
         h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
         .tagline { color: var(--text-muted); font-size: 1.1rem; }
         .buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
@@ -59,14 +59,14 @@
 <body>
     <div class="container">
         <header>
-            <img src="https://raw.githubusercontent.com/caco3/pebble-home-assistant-on-your-wrist/master/config/logo_large.png" alt="Pebble Home on your Wrist Logo" class="logo">
-            <h1>Pebble Home Assistant on your Wrist</h1>
-            <p class="tagline">Control your Home Assistant smart home directly from your Pebble smartwatch</p>
+            <img src="assets/banner.png" alt="Home Assistant Voice Assistant" class="banner">
+            <h1>Home Assistant - Voice Assistant</h1>
+            <p class="tagline">Open Home Assistant Assist directly from your Pebble smartwatch</p>
             <div class="buttons">
-                <a href="https://apps.rebble.io/en_US/application/6a7f8941a2b290000a2e69e8" class="btn btn-primary">
-                    📥 Get on Rebble Store
+                <a href="https://github.com/ethosoccer/home-assistant-voice-assistant/releases" class="btn btn-primary">
+                    📥 Download a release
                 </a>
-                <a href="https://github.com/caco3/pebble-home-assistant-on-your-wrist" class="btn btn-secondary">
+                <a href="https://github.com/ethosoccer/home-assistant-voice-assistant" class="btn btn-secondary">
                     ⭐ View on GitHub
                 </a>
             </div>
@@ -74,53 +74,61 @@
 
         <section class="features">
             <div class="feature">
-                <h3>🔌 Real-time WebSocket</h3>
-                <p>Live updates and faster response times with automatic reconnection if connection is lost.</p>
+                <h3>⚡ Direct launch</h3>
+                <p>Skips entity downloads and menus, opening Assist immediately after authentication.</p>
             </div>
             <div class="feature">
                 <h3>🎤 Voice Control</h3>
                 <p>Control your smart home with voice commands using any conversation agent configured in Home Assistant.</p>
             </div>
             <div class="feature">
-                <h3>🏠 Entity Management</h3>
-                <p>Browse entities by area, domain, or favorites. View details and control devices with ease.</p>
+                <h3>🔌 Home Assistant native</h3>
+                <p>Uses Home Assistant's WebSocket API and your configured Assist pipelines.</p>
             </div>
             <div class="feature">
-                <h3>🎵 Media Controls</h3>
-                <p>Dedicated interface for controlling media players with volume and playback controls.</p>
+                <h3>⌚ Pebble focused</h3>
+                <p>Designed for microphone-equipped Pebble watches on the emery platform.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Screenshots</h2>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                <img src="assets/store/screenshot-launch.png" alt="Connecting to Home Assistant" width="200" height="228">
+                <img src="assets/store/screenshot-listening.png" alt="Listening for a voice command" width="200" height="228">
+                <img src="assets/store/screenshot-response.png" alt="Displaying an Assist response" width="200" height="228">
             </div>
         </section>
 
         <section class="section">
             <h2>Quick Links</h2>
             <div class="links-grid">
-                <a href="https://github.com/caco3/pebble-home-assistant-on-your-wrist#installation" class="link-card">
+                <a href="https://github.com/ethosoccer/home-assistant-voice-assistant#configuration" class="link-card">
                     <h4>📖 Installation Guide</h4>
                     <p>Get started with the app</p>
                 </a>
-                <a href="https://github.com/caco3/pebble-home-assistant-on-your-wrist#configuration" class="link-card">
+                <a href="../config/v1.2.html" class="link-card">
                     <h4>⚙️ Configuration</h4>
                     <p>Set up your Home Assistant connection</p>
                 </a>
-                <a href="https://github.com/caco3/pebble-home-assistant-on-your-wrist/releases" class="link-card">
+                <a href="https://github.com/ethosoccer/home-assistant-voice-assistant/releases" class="link-card">
                     <h4>📦 Releases</h4>
                     <p>Download the latest version</p>
                 </a>
-                <a href="https://discord.com/channels/221364737269694464/1356054710439903232" class="link-card">
-                    <h4>💬 Discord</h4>
-                    <p>Join the community discussion</p>
+                <a href="https://github.com/ethosoccer/home-assistant-voice-assistant" class="link-card">
+                    <h4>💻 Source code</h4>
+                    <p>View and contribute on GitHub</p>
                 </a>
             </div>
         </section>
 
         <footer>
-            <p>Made with ❤️ for the Pebble community</p>
+            <p>Developed by ethosoccer for the Pebble community</p>
             <p style="margin-top: 0.5rem;">
-                <a href="https://github.com/caco3/pebble-home-assistant-on-your-wrist">GitHub</a> · 
-                <a href="https://github.com/caco3/pebble-home-assistant-on-your-wrist/blob/master/LICENSE">MIT License</a>
+                <a href="https://github.com/ethosoccer/home-assistant-voice-assistant">GitHub</a> ·
+                <a href="https://github.com/ethosoccer/home-assistant-voice-assistant/blob/master/license.txt">MIT License</a>
             </p>
         </footer>
     </div>
 </body>
 </html>
-
